@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>調剤薬局 粗利単価＆資材コスト気づきシミュレーター</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
+  <link rel="stylesheet" href="styles/checklist-kaizen.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="header-title-group">
+        <div class="header-logo" aria-hidden="true">💊</div>
+        <div>
+          <h1 class="header-title">調剤薬局 粗利単価＆資材コスト気づきシミュレーター</h1>
+          <p class="header-subtitle">
+            技術料単価から薬袋・用紙・一包化袋などの費用を差し引き、「本当の粗利単価」と「年間改善インパクト」を直感シミュレーション
+          </p>
+        </div>
+      </div>
+      <div class="header-steps">
+        <span class="step-pill">① 年間枚数・技術料を合わせる</span>
+        <span class="step-pill">② 使っている資材にチェック✓</span>
+        <span class="step-pill">③ 見直し効果で年間粗利UP！</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+    <!-- 上部：年間処方箋枚数 ＆ 粗利単価・年間粗利KPIダッシュボード -->
+    <section id="summary-section" aria-label="粗利シミュレーション結果"></section>
+
+    <!-- メイン2カラムワークスペース -->
+    <div class="workspace-grid">
+      <div class="workspace-left">
+        <!-- 処方パターン切替 ＆ 技術料単価設定 -->
+        <section id="patterns-section" class="panel-card" aria-label="処方パターンと技術料設定"></section>
+
+        <!-- 資材・消耗品チェックリスト -->
+        <section id="checklist-section" class="panel-card" aria-label="資材費用チェックリスト"></section>
+      </div>
+
+      <aside class="workspace-right">
+        <!-- 「コレ変えたらいくら浮く？」改善シミュレーター ＆ 内訳チャート -->
+        <section id="kaizen-section" aria-label="改善シミュレーターとコスト内訳"></section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    調剤薬局 現場コスト意識向上シミュレーター — 設定内容はブラウザに自動保存されます（いつでも「初期値に戻す」でリセット可能）
+  </footer>
+
+  <!-- モジュール読み込み（ビルド不要・ダブルクリックで直接起動可能） -->
+  <script src="js/utils/formatters.js"></script>
+  <script src="js/data/presets.js"></script>
+  <script src="js/logic/calculator.js"></script>
+  <script src="js/logic/state.js"></script>
+  <script src="js/ui/renderSummary.js"></script>
+  <script src="js/ui/renderPatterns.js"></script>
+  <script src="js/ui/renderChecklist.js"></script>
+  <script src="js/ui/renderKaizen.js"></script>
+  <script src="js/ui/app.js"></script>
+</body>
+</html>
